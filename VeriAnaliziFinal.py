@@ -107,7 +107,7 @@ except:
     df = None
 
 if df is not None:
-    df = load_data(uploaded_file)  
+    df = load_data()  
     
     degisken1W = st.sidebar.selectbox(label="X değişkeni",options=["Seç"] + list(df.columns))
     hedefDegiskenW = st.sidebar.selectbox(label="Hedef Değişken",options=["Seç"] + list(df.columns))
