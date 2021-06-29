@@ -112,7 +112,7 @@ if df is not None:
     degisken1W = st.sidebar.selectbox(label="X değişkeni",options=["Seç"] + list(df.columns))
     hedefDegiskenW = st.sidebar.selectbox(label="Hedef Değişken",options=["Seç"] + list(df.columns))
     qW = st.sidebar.slider('Nümerik Değişken Dilim Sayısı', min_value=1, max_value=50 , value=5 , step=1, format="%d")
-    tolW = st.sidebar.slider("Others'ın için minimum frekans", min_value=0.0, max_value=1.0 , value=0.05 , step=0.001, format="%f")
+    tolW = st.sidebar.slider("Others için maksimum frekans (Kategorik)", min_value=0.0, max_value=1.0 , value=0.05 , step=0.001, format="%f")
     
     if hedefDegiskenW == "Seç":
         lineW = st.sidebar.selectbox(label="Değişken Değerleri", options=["Seç"])
