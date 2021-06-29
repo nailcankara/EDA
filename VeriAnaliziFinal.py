@@ -114,7 +114,7 @@ if uploaded_file is not None:
     else:
         lineW = st.sidebar.selectbox(label="Değişken Değerleri", options=["Seç"] + list(df[hedefDegiskenW].unique()) )
     
-    
+    st.sidebar.write("Made by Analytics Team")
 
     VeriGorsellestirme(degisken1W,hedefDegiskenW,qW,tolW,lineW)
     
