@@ -98,6 +98,7 @@ def VeriGorsellestirme(degisken1,hedefDegisken,q,tol,line):
 
 
 #streamlit run VeriAnaliziFinal.py --server.maxUploadSize=1028
+st.sidebar.write("Made by Analytics Team")
 st.sidebar.markdown('### **1️⃣ Csv Dosyası Seç 👇 **')
 uploaded_file = st.sidebar.file_uploader("", type="csv", key='file_uploader')
 
@@ -114,7 +115,7 @@ if uploaded_file is not None:
     else:
         lineW = st.sidebar.selectbox(label="Değişken Değerleri", options=["Seç"] + list(df[hedefDegiskenW].unique()) )
     
-    st.sidebar.write("Made by Analytics Team")
+    
 
     VeriGorsellestirme(degisken1W,hedefDegiskenW,qW,tolW,lineW)
     
