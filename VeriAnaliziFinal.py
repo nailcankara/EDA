@@ -101,7 +101,6 @@ def VeriGorsellestirme(degisken1,hedefDegisken,q,tol,line):
 
 
 #streamlit run VeriAnaliziFinal.py --server.maxUploadSize=1028
-st.sidebar.header("Veri Görselleştirme")
 try:
     df = load_data()  
 except:
