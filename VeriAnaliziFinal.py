@@ -7,8 +7,8 @@ from feature_engine.encoding import RareLabelEncoder
 
 
 @st.cache(allow_output_mutation=True)
-def load_data(uploaded_file):
-    return pd.read_csv(uploaded_file).astype(np.float64,errors="ignore")
+def load_data():
+    return pd.read_csv("http://cooltiming.com/SV/train.csv").astype(np.float64,errors="ignore")
 
 
 def Gorsellestir(degisken1,hedefDegisken,lineSelect):
@@ -101,11 +101,12 @@ def VeriGorsellestirme(degisken1,hedefDegisken,q,tol,line):
 
 
 #streamlit run VeriAnaliziFinal.py --server.maxUploadSize=1028
-st.sidebar.write("Made by Analytics Team")
-st.sidebar.markdown('### **1️⃣ Csv Dosyası Seç 👇 **')
-uploaded_file = st.sidebar.file_uploader("", type="csv", key='file_uploader')
+try:
+    df = load_data()  
+except:
+    df = None
 
-if uploaded_file is not None:
+if df is not None:
     df = load_data(uploaded_file)  
     
     degisken1W = st.sidebar.selectbox(label="X değişkeni",options=["Seç"] + list(df.columns))
