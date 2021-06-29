@@ -77,7 +77,10 @@ def VeriGorsellestirme(degisken1,hedefDegisken,q,tol,line):
     if df[degisken1].dtype == "object":
         CategoricProcessing(degisken1,tol)
     else:
-        nonCategoricProcessing(degisken1,q)
+        if len(df[degisken1].unique()) <= 10:
+            CategoricProcessing(degisken1,tol)
+        else:
+            nonCategoricProcessing(degisken1,q)
 
 
     Gorsellestir(degisken1,hedefDegisken,line)
